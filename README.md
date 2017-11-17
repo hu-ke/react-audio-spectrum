@@ -8,7 +8,7 @@
 ## Getting Started
 ```
 <audio id="audio-element"
-  src={`${this.playlist[0]}`}
+  src="path/to/your/song.mp3"
   autoPlay
 >
 </audio>
@@ -31,7 +31,7 @@
 ```
 ## Props
 | property | Description | type|default| isRequired |
-|---------|---------|-------------|---------|
+|---------|---------|-------------|---------|--------|
 | id| canvas id|number/string| a random string|false|
 |width|canvas width|number|300|false|
 |height|canvas height|number|200|false|
@@ -48,4 +48,4 @@ or
 npm install react-audio-spectrum --save
 ```
 ## Contributing
-dragging.js is a free and open source library, and I appreciate any help you're willing to give - whether it's fixing bugs, improving documentation, or suggesting new features.
+react-audio-spectrum is a free and open source react library, and I appreciate any help you're willing to give - whether it's fixing bugs, improving documentation, or suggesting new features.
