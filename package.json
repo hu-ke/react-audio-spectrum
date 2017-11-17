@@ -1,0 +1,30 @@
+{
+  "name": "react-audio-spectrum",
+  "version": "0.0.4",
+  "description": "a component for displaying audio spectrum",
+  "main": "./lib/AudioSpectrum.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hu-ke/react-audio-spectrum.git"
+  },
+  "keywords": [
+    "audio",
+    "spectrum",
+    "react",
+    "visualizer",
+    "visualize",
+    "music",
+    "player",
+    "音频"
+  ],
+  "dependencies": {
+    "prop-types": "^15.6.0",
+    "react": "^16.1.0",
+    "react-dom": "^16.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "huke <403392669@qq.com>",
+  "license": "ISC"
+}

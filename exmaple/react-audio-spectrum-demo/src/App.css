@@ -1,0 +1,14 @@
+
+.container {
+  width: 1152px;
+  margin: 0 auto;
+  margin-top: 50px;
+  text-align: center;
+}
+.card {
+  /*display: inline-block;*/
+  text-align: center;
+}
+.iconfont {
+  font-size: 30px;
+}
