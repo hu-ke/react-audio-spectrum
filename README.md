@@ -1,9 +1,9 @@
 # React Audio Spectrum
 > An audio spectrum visualizer for react.
 
-![](http://https://github.com/hu-ke/react-audio-spectrum/react-audio-spectrum-demo.gif)
+![](https://hu-ke.github.io/react-audio-spectrum/react-audio-spectrum-demo.gif)
 ## Live Demo
-> https://github.com/hu-ke/react-audio-spectrum
+> https://hu-ke.github.io/react-audio-spectrum/
 
 ## Getting Started
 ```
