@@ -30,7 +30,7 @@
 />
 ```
 ## Props
-| property | Description | type|default| isRequired |
+| property | description | type|default| isRequired |
 |---------|---------|-------------|---------|--------|
 | id| canvas id|number/string| a random string|false|
 |width|canvas width|number|300|false|
