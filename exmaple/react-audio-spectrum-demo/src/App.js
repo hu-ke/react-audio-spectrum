@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import './assets/iconfont/iconfont.css'
-import AudioSpectrum from 'react-audio-spectrum'
+import AudioSpectrum from './AudioSpectrum'
 import HowLongWillILoveYou from './assets/media/How-Long-Will-I-Love-You.mp3'
 import boydontcry from './assets/media/boydontcry.mp3'
 import CantStandTheRain from './assets/media/CantStandTheRain.mp3'
@@ -11,7 +11,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      audioStatus: 'PLAYING',
+      audioStatus: 'PAUSED',
       audioStatus1: 'PAUSED',
       audioStatus2: 'PAUSED',
       audioStatus3: 'PAUSED',
@@ -40,6 +40,10 @@ class App extends Component {
     this.audioEle1 = document.getElementById('audio-element1')
     this.audioEle2 = document.getElementById('audio-element2')
     this.audioEle3 = document.getElementById('audio-element3')
+
+    this.audioEle1.oncanplay = (e) => {
+      this.audioEle1.play()
+    }
   }
   pause = () => {
     this.audioEle.pause()
@@ -104,8 +108,8 @@ class App extends Component {
               ) : <i onClick={this.pause} className="iconfont icon-pause"></i>
             }<br/>
             <audio id="audio-element"
+              preload="true"
               src={`${this.playlist[0]}`}
-              autoPlay
             >
             </audio>
             <AudioSpectrum
@@ -160,6 +164,7 @@ class App extends Component {
               ) : <i onClick={this.pause2} className="iconfont icon-pause"></i>
             }<br/>
             <audio id="audio-element2"
+              preload="true"
               src={`${this.playlist[2]}`}
             >
             </audio>
@@ -186,6 +191,7 @@ class App extends Component {
               ) : <i onClick={this.pause3} className="iconfont icon-pause"></i>
             }<br/>
             <audio id="audio-element3"
+              preload="true"
               src={`${this.playlist[3]}`}
             >
             </audio>
