@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import './App.css';
 import './assets/iconfont/iconfont.css'
 import AudioSpectrum from 'react-audio-spectrum'
+import HowLongWillILoveYou from './assets/media/How-Long-Will-I-Love-You.mp3'
 import boydontcry from './assets/media/boydontcry.mp3'
 import CantStandTheRain from './assets/media/CantStandTheRain.mp3'
-import HowLongWillILoveYou from './assets/media/How-Long-Will-I-Love-You.m4a'
 import HoneyHoney from './assets/media/HoneyHoney.mp3'
-import panama from './assets/media/Panama.mp3'
 
 class App extends Component {
   constructor(props) {
@@ -21,22 +20,19 @@ class App extends Component {
     this.audioEle1 = null
     this.audioEle2 = null
     this.audioEle3 = null
-    this.playlist = [boydontcry, CantStandTheRain, HowLongWillILoveYou, HoneyHoney, panama]
+    this.playlist = [boydontcry, HowLongWillILoveYou, CantStandTheRain, HoneyHoney]
     this.playInfoList = [{
       song: '男孩别哭',
       player: '海龟先生',
     }, {
-      song: `Can't Stand The Rain`,
-      player: 'The Rescues'
-    }, {
       song: 'How Long Will I Love You',
       player: 'Ellie Goulding'
     }, {
+      song: `Can't Stand The Rain`,
+      player: 'The Rescues'
+    }, {
       song: 'Honey Honey',
       player: '孙燕姿'
-    }, {
-      song: 'panama',
-      player: 'matteo',
     }]
   }
   componentDidMount() {
@@ -97,18 +93,6 @@ class App extends Component {
     })
   }
 
-  pause4 = () => {
-    this.audioEle4.pause()
-    this.setState({
-      audioStatus4: 'PAUSED'
-    })
-  }
-  play4 = () => {
-    this.audioEle4.play()
-    this.setState({
-      audioStatus4: 'PLAYING'
-    })
-  }
   render() {
     return (
       <div className="App">
