@@ -42,7 +42,7 @@ class App extends Component {
     this.audioEle3 = document.getElementById('audio-element3')
 
     this.audioEle1.oncanplay = (e) => {
-      this.audioEle1.play()
+      this.play1()
     }
   }
   pause = () => {
