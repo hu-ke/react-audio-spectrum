@@ -35,7 +35,7 @@
 | id| canvas id|number/string| a random string|false|
 |width|canvas width|number|300|false|
 |height|canvas height|number|200|false|
-|audioId|id of the target|number/string| audio element|true|
+|audioId|id of the target audio element|number/string| - |true|
 |capColor|color of caps|string|#FFF|false|
 |capHeight|height of caps|string|2|false|
 |meterWidth|width of meters|number|2|false|
