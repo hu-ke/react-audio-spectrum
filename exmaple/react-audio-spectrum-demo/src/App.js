@@ -42,8 +42,15 @@ class App extends Component {
     this.audioEle3 = document.getElementById('audio-element3')
 
     this.audioEle1.oncanplay = (e) => {
+      // safari不允许自动播放
+      if (this.isSafari()) {
+        return
+      }
       this.play1()
     }
+  }
+  isSafari = () => {
+    return window.navigator.userAgent.indexOf('Safari') > -1 && window.navigator.userAgent.indexOf('Chrome') === -1
   }
   pause = () => {
     this.audioEle.pause()
@@ -184,30 +191,32 @@ class App extends Component {
             />
             <p>meterCount: 20<br/>gap: 1</p>
           </div>
-          <div className="card">
-            {
-              this.state.audioStatus3 === 'PAUSED' ? (
-                <i onClick={this.play3} className="iconfont icon-play"></i>
-              ) : <i onClick={this.pause3} className="iconfont icon-pause"></i>
-            }<br/>
-            <audio id="audio-element3"
-              preload="true"
-              src={`${this.playlist[3]}`}
-            >
-            </audio>
-            <AudioSpectrum
-              height={200}
-              width={300}
-              audioId={'audio-element3'}
-              capColor={'#92BF3F'}
-              capHeight={10}
-              meterWidth={10}
-              meterCount={20}
-              meterColor={'#41BF3F'}
-              gap={10}
-            />
-            <p>gap: 10<br/> capHeight:10 <br/> capColor: '#92BF3F <br/> meterColor: '#41BF3F'}</p>
-          </div>
+          {
+            !this.isSafari() && <div className="card">
+              {
+                this.state.audioStatus3 === 'PAUSED' ? (
+                  <i onClick={this.play3} className="iconfont icon-play"></i>
+                ) : <i onClick={this.pause3} className="iconfont icon-pause"></i>
+              }<br/>
+              <audio id="audio-element3"
+                preload="true"
+                src={`${this.playlist[3]}`}
+              >
+              </audio>
+              <AudioSpectrum
+                height={200}
+                width={300}
+                audioId={'audio-element3'}
+                capColor={'#92BF3F'}
+                capHeight={10}
+                meterWidth={10}
+                meterCount={20}
+                meterColor={'#41BF3F'}
+                gap={10}
+              />
+              <p>gap: 10<br/> capHeight:10 <br/> capColor: '#92BF3F <br/> meterColor: '#41BF3F'}</p>
+            </div>
+          }
         </div>
       </div>
     );
