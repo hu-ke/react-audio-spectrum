@@ -55,11 +55,11 @@ class AudioSpectrum extends Component {
             for (let i = 0; i < len; i++) {
                 gradient.addColorStop(stops[i]['stop'], stops[i]['color'])
             }
-            } else if (typeof this.props.meterColor === 'string') {
-                gradient = this.props.meterColor
-            }
+        } else if (typeof this.props.meterColor === 'string') {
+            gradient = this.props.meterColor
+        }
 
-            let drawMeter = () => {
+        let drawMeter = () => {
             let array = new Uint8Array(analyser.frequencyBinCount); // item value of array: 0 - 255
             analyser.getByteFrequencyData(array);
             if (this.playStatus === 'PAUSED') {
