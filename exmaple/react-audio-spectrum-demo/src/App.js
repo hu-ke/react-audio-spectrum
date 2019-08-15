@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import './assets/iconfont/iconfont.css'
-import AudioSpectrum from './AudioSpectrum'
+import AudioSpectrum from 'react-audio-spectrum'
 import HowLongWillILoveYou from './assets/media/How-Long-Will-I-Love-You.mp3'
 import boydontcry from './assets/media/boydontcry.mp3'
 import CantStandTheRain from './assets/media/CantStandTheRain.mp3'
