@@ -29,6 +29,17 @@
   gap={4}
 />
 ```
+### you can also pass audio element to the component
+```
+this.audioEle = new Audio('path/to/your/song.mp3) 
+<AudioSpectrum
+  id="audio-canvas"
+  height={200}
+  width={300}
+  audioEle={this.audioEle}
+/>
+```
+if you use both `audioId` and `audioEle` props, the component will ignore `audioEle`.
 ## Props
 | property | description | type|default| isRequired |
 |---------|---------|-------------|---------|--------|

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import './assets/iconfont/iconfont.css'
-import AudioSpectrum from 'react-audio-spectrum'
+import AudioSpectrum from './AudioSpectrum'
 import HowLongWillILoveYou from './assets/media/How-Long-Will-I-Love-You.mp3'
 import boydontcry from './assets/media/boydontcry.mp3'
 import CantStandTheRain from './assets/media/CantStandTheRain.mp3'
@@ -19,8 +19,8 @@ class App extends Component {
     this.audioEle = null
     this.audioEle1 = null
     this.audioEle2 = null
-    this.audioEle3 = null
     this.playlist = [boydontcry, HowLongWillILoveYou, CantStandTheRain, HoneyHoney]
+    this.audioEle3 = new Audio(this.playlist[3]);
     this.playInfoList = [{
       song: '男孩别哭',
       player: '海龟先生',
@@ -39,8 +39,6 @@ class App extends Component {
     this.audioEle = document.getElementById('audio-element')
     this.audioEle1 = document.getElementById('audio-element1')
     this.audioEle2 = document.getElementById('audio-element2')
-    this.audioEle3 = document.getElementById('audio-element3')
-
     this.audioEle1.oncanplay = (e) => {
       // safari不允许自动播放
       if (this.isSafari()) {
@@ -192,21 +190,16 @@ class App extends Component {
             <p>meterCount: 20<br/>gap: 1</p>
           </div>
           {
-            !this.isSafari() && <div className="card">
+            <div className="card">
               {
                 this.state.audioStatus3 === 'PAUSED' ? (
                   <i onClick={this.play3} className="iconfont icon-play"></i>
                 ) : <i onClick={this.pause3} className="iconfont icon-pause"></i>
               }<br/>
-              <audio id="audio-element3"
-                preload="true"
-                src={`${this.playlist[3]}`}
-              >
-              </audio>
               <AudioSpectrum
                 height={200}
                 width={300}
-                audioId={'audio-element3'}
+                audioEle={this.audioEle3}
                 capColor={'#92BF3F'}
                 capHeight={10}
                 meterWidth={10}
