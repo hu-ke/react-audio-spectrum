@@ -46,7 +46,8 @@ if you use both `audioId` and `audioEle` props, the component will ignore `audio
 | id| canvas id|number/string| a random string|false|
 |width|canvas width|number|300|false|
 |height|canvas height|number|200|false|
-|audioId|id of the target audio element|number/string| - |true|
+|audioId|id of the target audio element|number/string| - |false|
+|audioEle|target audio element|audio object| - |false|
 |capColor|color of caps|string|#FFF|false|
 |capHeight|height of caps|string|2|false|
 |meterWidth|width of meters|number|2|false|
