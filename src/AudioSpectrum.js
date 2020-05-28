@@ -77,27 +77,34 @@ class AudioSpectrum extends Component {
             ctx.clearRect(0, 0, cwidth, cheight + this.props.capHeight)
             for (let i = 0; i < this.props.meterCount; i++) {
                 let value = array[i * step]
-                if (capYPositionArray.length < Math.round(this.props.meterCount)) {
-                    capYPositionArray.push(value)
-                };
-                ctx.fillStyle = this.props.capColor
-                // draw the cap, with transition effect
-                if (value < capYPositionArray[i]) {
-                    // let y = cheight - (--capYPositionArray[i])
-                    let preValue = --capYPositionArray[i]
-                    let y = (270 - preValue) * cheight / 270
-                    ctx.fillRect(i * (this.props.meterWidth + this.props.gap), y, this.props.meterWidth, this.props.capHeight)
-                } else {
-                    // let y = cheight - value
-                    let y = (270 - value) * cheight / 270
-                    ctx.fillRect(i * (this.props.meterWidth + this.props.gap), y, this.props.meterWidth, this.props.capHeight)
-                    capYPositionArray[i] = value
-                };
+
+                if(!this.props.centerAxis) {
+                    if (capYPositionArray.length < Math.round(this.props.meterCount)) {
+                        capYPositionArray.push(value)
+                    };
+                    ctx.fillStyle = this.props.capColor
+                    // draw the cap, with transition effect
+                    if (value < capYPositionArray[i]) {
+                        // let y = cheight - (--capYPositionArray[i])
+                        let preValue = --capYPositionArray[i]
+                        let y = (270 - preValue) * cheight / 270
+                        ctx.fillRect(i * (this.props.meterWidth + this.props.gap), y, this.props.meterWidth, this.props.capHeight)
+                    } else {
+                        // let y = cheight - value
+                        let y = (270 - value) * cheight / 270
+                        ctx.fillRect(i * (this.props.meterWidth + this.props.gap), y, this.props.meterWidth, this.props.capHeight)
+                        capYPositionArray[i] = value
+                    };
+                }
                 ctx.fillStyle = gradient; // set the filllStyle to gradient for a better look
 
                 // let y = cheight - value + this.props.capHeight
                 let y = (270 - value) * (cheight) / 270 + this.props.capHeight
-                ctx.fillRect(i * (this.props.meterWidth + this.props.gap), y, this.props.meterWidth, cheight) // the meter
+                if(this.props.centerAxis) {
+                    ctx.fillRect(i * (this.props.meterWidth + this.props.gap), y/2, this.props.meterWidth, cheight-y); // the meter
+                } else {
+                    ctx.fillRect(i * (this.props.meterWidth + this.props.gap), y, this.props.meterWidth, cheight) // the meter
+                }
             }
             this.animationId = requestAnimationFrame(drawMeter)
         }
@@ -168,6 +175,7 @@ AudioSpectrum.propTypes = {
         })),
     ]),
     gap: PropTypes.number,
+    centerAxis: PropTypes.bool,
 }
 AudioSpectrum.defaultProps = {
     width: 300,
@@ -182,5 +190,6 @@ AudioSpectrum.defaultProps = {
         {stop: 1, color: 'red'}
     ],
     gap: 10, // gap between meters
+    centerAxis: false, // it true, ignores cap and transforms origin of axis to center
 }
 export default AudioSpectrum
