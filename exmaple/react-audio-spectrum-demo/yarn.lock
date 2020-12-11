@@ -3051,8 +3051,8 @@ inherits@2.0.1:
   resolved "https://registry.yarnpkg.com/inherits/-/inherits-2.0.1.tgz#b17d08d326b4423e568eff719f91b0b1cbdf69f1"
 
 ini@^1.3.4, ini@~1.3.0:
-  version "1.3.4"
-  resolved "https://registry.yarnpkg.com/ini/-/ini-1.3.4.tgz#0537cb79daf59b59a1a517dff706c86ec039162e"
+  version "1.3.7"
+  resolved "https://registry.yarnpkg.com/ini/-/ini-1.3.7.tgz#a09363e1911972ea16d7a8851005d84cf09a9a84"
 
 inquirer@3.3.0, inquirer@^3.0.6:
   version "3.3.0"
@@ -5014,9 +5014,9 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-audio-spectrum@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/react-audio-spectrum/-/react-audio-spectrum-0.0.4.tgz#8b81dcbc578fcac31ac4d414230f7bd8db2d7e4f"
+react-audio-spectrum@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/react-audio-spectrum/-/react-audio-spectrum-0.1.0.tgz#286c883aac7513b4b44fab26dc5e53f77c037730"
   dependencies:
     prop-types "^15.6.0"
     react "^16.1.0"
