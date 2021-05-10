@@ -2884,8 +2884,8 @@ homedir-polyfill@^1.0.1:
     parse-passwd "^1.0.0"
 
 hosted-git-info@^2.1.4:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.5.0.tgz#6d60e34b3abbc8313062c3b798ef8d901a07af3c"
+  version "2.8.9"
+  resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.8.9.tgz#dffc0bf9a21c02209090f2aa69429e1414daf3f9"
 
 hpack.js@^2.1.6:
   version "2.1.6"
@@ -5014,9 +5014,9 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-audio-spectrum@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/react-audio-spectrum/-/react-audio-spectrum-0.0.4.tgz#8b81dcbc578fcac31ac4d414230f7bd8db2d7e4f"
+react-audio-spectrum@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/react-audio-spectrum/-/react-audio-spectrum-0.1.0.tgz#286c883aac7513b4b44fab26dc5e53f77c037730"
   dependencies:
     prop-types "^15.6.0"
     react "^16.1.0"
