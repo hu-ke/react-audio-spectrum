@@ -28,6 +28,10 @@ class AudioSpectrum extends Component {
         this.prepareElements()
         this.initAudioEvents()
     }
+    
+    onComponentWillUnmount() {
+//        audioContext.disconnect()
+    }
     initAudioEvents = () => {
         let audioEle = this.audioEle
         if (audioEle) {
