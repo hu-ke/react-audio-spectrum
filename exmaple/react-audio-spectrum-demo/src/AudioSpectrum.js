@@ -47,7 +47,7 @@ class AudioSpectrum extends Component {
         let cheight = this.audioCanvas.height - this.props.capHeight
         let capYPositionArray = [] // store the vertical position of hte caps for the preivous frame
         let ctx = this.audioCanvas.getContext('2d')
-        let gradient = ctx.createLinearGradient(0, 0, 0, 300)
+        let gradient = ctx.createLinearGradient(0, 0, 0, cheight)
 
         if (this.props.meterColor.constructor === Array) {
             let stops = this.props.meterColor
@@ -76,7 +76,7 @@ class AudioSpectrum extends Component {
             let step = Math.round(array.length / this.props.meterCount) // sample limited data from the total array
             ctx.clearRect(0, 0, cwidth, cheight + this.props.capHeight)
             for (let i = 0; i < this.props.meterCount; i++) {
-                let value = array[i * step]
+                let value = array[i * step] // pick one value out of every 2(step)
                 if (capYPositionArray.length < Math.round(this.props.meterCount)) {
                     capYPositionArray.push(value)
                 };
@@ -85,18 +85,18 @@ class AudioSpectrum extends Component {
                 if (value < capYPositionArray[i]) {
                     // let y = cheight - (--capYPositionArray[i])
                     let preValue = --capYPositionArray[i]
-                    let y = (270 - preValue) * cheight / 270
+                    let y = (256 - preValue) * cheight / 256
                     ctx.fillRect(i * (this.props.meterWidth + this.props.gap), y, this.props.meterWidth, this.props.capHeight)
                 } else {
                     // let y = cheight - value
-                    let y = (270 - value) * cheight / 270
+                    let y = (256 - value) * cheight / 256
                     ctx.fillRect(i * (this.props.meterWidth + this.props.gap), y, this.props.meterWidth, this.props.capHeight)
                     capYPositionArray[i] = value
                 };
                 ctx.fillStyle = gradient; // set the filllStyle to gradient for a better look
 
                 // let y = cheight - value + this.props.capHeight
-                let y = (270 - value) * (cheight) / 270 + this.props.capHeight
+                let y = (256 - value) * (cheight) / 256 + this.props.capHeight
                 ctx.fillRect(i * (this.props.meterWidth + this.props.gap), y, this.props.meterWidth, cheight) // the meter
             }
             this.animationId = requestAnimationFrame(drawMeter)
