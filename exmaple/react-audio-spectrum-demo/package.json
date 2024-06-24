@@ -2,6 +2,7 @@
   "name": "react-audio-spectrum-demo",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://hu-ke.github.io/react-audio-spectrum/",
   "dependencies": {
     "react": "^16.1.1",
     "react-audio-spectrum": "^0.1.0",
