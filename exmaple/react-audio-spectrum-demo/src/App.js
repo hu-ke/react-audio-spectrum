@@ -207,7 +207,7 @@ class App extends Component {
                 meterColor={'#41BF3F'}
                 gap={10}
               />
-              <p>gap: 10<br/> capHeight:10 <br/> capColor: '#92BF3F <br/> meterColor: '#41BF3F'}</p>
+              <p>gap: 10<br/> capHeight:10 <br/> capColor: '#92BF3F <br/> meterColor: '#41BF3F'</p>
             </div>
           }
         </div>
