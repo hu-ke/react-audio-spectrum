@@ -13,7 +13,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "PUBLIC_URL=https://hu-ke.github.io/react-audio-spectrum/ react-scripts build",
     "eject": "react-scripts eject"
   }
 }

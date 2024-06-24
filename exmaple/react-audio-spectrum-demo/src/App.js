@@ -19,7 +19,7 @@ class App extends Component {
     this.audioEle = null
     this.audioEle1 = null
     this.audioEle2 = null
-    this.playlist = [boydontcry, HowLongWillILoveYou, CantStandTheRain, HoneyHoney]
+    this.playlist = [`${process.env.PUBLIC_URL}${boydontcry}`, `${process.env.PUBLIC_URL}${HowLongWillILoveYou}`, `${process.env.PUBLIC_URL}${CantStandTheRain}`, `${process.env.PUBLIC_URL}${HoneyHoney}`]
     this.audioEle3 = new Audio(this.playlist[3]);
     this.playInfoList = [{
       song: '男孩别哭',
