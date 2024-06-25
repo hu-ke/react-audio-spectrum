@@ -40,6 +40,28 @@ this.audioEle = new Audio('path/to/your/song.mp3)
 />
 ```
 if you use both `audioId` and `audioEle` props, the component will ignore `audioEle`.
+### How to fix `CORS` issue?
+if you encounter the console error like: `MediaElementAudioSource outputs zeroes due to CORS access restrictions` That means your web application attempts to access resources (like MP3 files) from a different origin (domain, protocol, or port) without the appropriate CORS headers being set by the server hosting the resource. Here is the nginx sample config to resolve CORS errors:
+```bash
+location / {
+    add_header 'Access-Control-Allow-Origin' '*';
+}
+```
+Or, if you are specifying allowed origins:
+```bash
+location / {
+    add_header 'Access-Control-Allow-Origin' 'https://your-website.com';
+}
+```
+Further more, you need to add the `crossOrigin` attribute to your `audio` element:
+```
+<audio id="audio-element1"
+  src="https://reader.guru/medias/How-Long-Will-I-Love-You.mp3"
+  crossOrigin="anonymous"
+>
+```
+The link `https://reader.guru/medias/How-Long-Will-I-Love-You.mp3` has been configured with `Access-Control-Allow-Origin` header, you can use it for testing.
+
 ## Props
 | property | description | type|default| isRequired |
 |---------|---------|-------------|---------|--------|

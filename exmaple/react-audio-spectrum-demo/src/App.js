@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import './assets/iconfont/iconfont.css'
 import AudioSpectrum from 'react-audio-spectrum'
-import HowLongWillILoveYou from './assets/media/How-Long-Will-I-Love-You.mp3'
+// import HowLongWillILoveYou from './assets/media/How-Long-Will-I-Love-You.mp3'
 import boydontcry from './assets/media/boydontcry.mp3'
 import CantStandTheRain from './assets/media/CantStandTheRain.mp3'
 import HoneyHoney from './assets/media/HoneyHoney.mp3'
@@ -19,7 +19,7 @@ class App extends Component {
     this.audioEle = null
     this.audioEle1 = null
     this.audioEle2 = null
-    this.playlist = [`${boydontcry}`, `${HowLongWillILoveYou}`, `${CantStandTheRain}`, `${HoneyHoney}`]
+    this.playlist = [`${boydontcry}`, 'https://reader.guru/medias/How-Long-Will-I-Love-You.mp3', `${CantStandTheRain}`, `${HoneyHoney}`]
     this.audioEle3 = new Audio(this.playlist[3]);
     this.playInfoList = [{
       song: '男孩别哭',
@@ -143,6 +143,7 @@ class App extends Component {
             }<br/>
             <audio id="audio-element1"
               src={`${this.playlist[1]}`}
+              crossOrigin="anonymous"
             >
             </audio>
             <AudioSpectrum
