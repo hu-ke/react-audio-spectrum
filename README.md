@@ -75,6 +75,7 @@ The link `https://reader.guru/medias/How-Long-Will-I-Love-You.mp3` has been conf
 |meterWidth|width of meters|number|2|false|
 |meterColor|color of meters|string/array|[{stop: 0, color: '#f00'},{stop: 0.5, color: '#0CD7FD'},{stop: 1, color: 'red'}]|false|
 |gap|gap between meters|number|10|false|
+|silent|if play the audio in silent mode |boolean|false|false|
 ## Install
 ```
 yarn add react-audio-spectrum --save
