@@ -1,1 +1,0 @@
-# react-audio-spectrum demo
