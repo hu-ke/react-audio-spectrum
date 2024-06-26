@@ -1,7 +1,3 @@
----
-order: 10
----
-
 # React Audio Spectrum
 > An audio spectrum visualizer for react.
 
