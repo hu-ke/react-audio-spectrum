@@ -19,6 +19,7 @@ type ComponentProps = {
   meterColor?: string | ColorItem[],
   meterCount?: number,
   gap?: number,
+  silent?: boolean,
 };
 
 enum PLAY_STATUS {
@@ -39,6 +40,7 @@ export default function ReactAudioSpectrum(props: ComponentProps) {
     ],
     gap=10,
     meterCount=160, meterWidth=2,
+    silent=false
   } = props;
   const _audioEleRef = useRef<HTMLElement>()
   const _audioCanvasRef = useRef<HTMLCanvasElement>()
@@ -85,7 +87,9 @@ export default function ReactAudioSpectrum(props: ComponentProps) {
       // @ts-ignore
       _mediaEleSourceRef.current = _audioContextRef.current.createMediaElementSource(audioEle)
       _mediaEleSourceRef.current.connect(_audioAnalyserRef.current)
-      _mediaEleSourceRef.current.connect(_audioContextRef.current.destination);
+      if (!silent) {
+        _mediaEleSourceRef.current.connect(_audioContextRef.current.destination);
+      }
     }
   }
 
