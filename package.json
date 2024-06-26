@@ -1,6 +1,6 @@
 {
   "name": "react-audio-spectrum",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "a component for displaying audio spectrum",
   "files": [
     "demo/",
@@ -57,5 +57,5 @@
     "access": "public"
   },
   "license": "MIT",
-  "homepage": "https://unpkg.com/react-audio-spectrum@0.1.3/build/index.html"
+  "homepage": "https://unpkg.com/react-audio-spectrum@0.1.4/build/index.html"
 }
